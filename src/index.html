@@ -43,7 +43,7 @@
         <script>
             (function() {
                 window.addEventListener('load', function() {
-                    var factor = innerWidth / 520;
+                    var factor = innerWidth ? innerWidth / 520 : 1;
                     if (factor < 1) {
                         document.getElementById('root').style.transform =
                             'scale(' + factor + ')';
