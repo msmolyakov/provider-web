@@ -15,8 +15,12 @@ export class TransportIframe extends Transport<HTMLIFrameElement> {
         this._initIframe();
     }
 
-    public get(): HTMLIFrameElement | undefined {
-        return this._iframe;
+    public get(): HTMLIFrameElement {
+        if (!this._iframe) {
+            this._initIframe();
+        }
+
+        return this._iframe as HTMLIFrameElement;
     }
 
     protected _dropTransportConnect(): void {
